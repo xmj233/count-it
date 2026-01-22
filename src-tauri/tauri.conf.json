@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "count-it",
+  "productName": "all worth it",
   "version": "0.1.0",
-  "identifier": "com.count-it",
+  "identifier": "com.all-worth-it",
   "build": {
     "frontendDist": "../.output/public",
     "devUrl": "http://localhost:3000",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "count-it",
+        "title": "All Worth It",
         "width": 800,
         "height": 600,
         "resizable": true,
