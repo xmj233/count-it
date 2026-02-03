@@ -5,26 +5,33 @@ const date = shallowRef(new CalendarDate(2022, 2, 3))
 </script>
 
 <template>
-  <div class="px-4 md:px-10">
-    <UCard variant="subtle">
+  <div class="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-8 px-4 md:px-10">
+    <UCard class="border-0 shadow-xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm">
       <template #header>
-        <UInputDate v-model="date" />
+        <div class="p-4 pb-3">
+          <UInputDate v-model="date" size="lg" />
+        </div>
       </template>
 
-      <div class="flex items-stretch justify-center gap-4 lg:gap-8">
-        <div class="hidden lg:flex flex-1 relative overflow-hidden min-w-[250px]">
-          <JournalCard class="hidden 2xl:block" />
-          <JournalCard2 class="block 2xl:hidden" />
+      <div class="flex flex-col md:flex-row items-stretch justify-center gap-6 p-4">
+        <div class="hidden md:flex relative overflow-hidden min-w-[450px] rounded-lg">
+          <JournalCard2 />
         </div>
-        <div class="w-full max-w-[768px] min-w-[320px]">
-          <UCard>
-            <UEmpty class="h-[500px]" />
-          </UCard>
+        <div class="flex md:hidden rounded-lg overflow-hidden">
+          <JournalCard3 />
+        </div>
+
+        <div class="flex-1 min-w-[268px] flex flex-col gap-4">
+          <JournalDiaryCard />
+          <JournalDiaryCard />
+          <JournalDiaryCard />
         </div>
       </div>
 
       <template #footer>
-        this is tag
+        <div class="p-4 pt-3 text-sm text-gray-600 dark:text-gray-400">
+          this is tag
+        </div>
       </template>
     </UCard>
   </div>
